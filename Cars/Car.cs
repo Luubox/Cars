@@ -15,6 +15,8 @@ namespace Cars
         private string _colour;
         private string _licensePlate;
 
+        private Trailer _trailer;
+
         public string Make
         {
             get { return _make; } //behøver ikke set, skal ikke kunne ændres efterfølgende
@@ -42,6 +44,17 @@ namespace Cars
             set { _licensePlate = value; }
         }
 
+        //public Trailer Trailer
+        //{
+        //    get { return _trailer; }
+        //    set { _trailer = value; }
+        //}
+
+        public void AttachTrailer(Trailer trailer)
+        {
+            _trailer = trailer;
+        }
+
         public Car(string make, string model, int year, bool benzin, string colour, string licensePlate) : this(make,model,year)
         {
             _benzin = benzin;
@@ -66,16 +79,20 @@ namespace Cars
             
         }
 
-        ////Ebbe stringbuilder løsning
+        //Ebbe stringbuilder løsning
         //public override string ToString()
         //{
-        //    StringBuilder sB = new StringBuilder();
-        //    sB.AppendLine("+-----------------------+");
-        //    sB.Append("| Make: ");
-        //    sB.Append("\t");
-        //    sB.Append(_make);
-        //    sB.Append("\t|");
-        //    return sB.ToString();
+        //    StringBuilder sb = new StringBuilder();
+        //    sb.AppendLine("+-----------------------+");
+        //    sb.Append("| Make: ");
+        //    sb.Append("\t");
+        //    sb.Append(_make);
+        //    sb.Append("\t|");
+        //    if (_trailer != null) sb.Append(_trailer.ToString());
+        //    return sb.ToString();
+
+        //    //string s = "+------...";
+        //    //s += "| blahblah...";
         //}
 
         public override string ToString()
